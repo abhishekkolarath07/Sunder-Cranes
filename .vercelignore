@@ -1,0 +1,8 @@
+# Local tooling
+.claude/
+
+# Design-tool leftovers and source files not used by the site
+demo/
+uploads/
+brand/logo-src.png
+brand/sunder-lockup.png
