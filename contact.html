@@ -74,53 +74,52 @@
 <section class="section contact-main" aria-labelledby="enquiry-title">
   <div class="contact-layout">
 
-    <div class="enquiry" data-reveal="up">
-      <h2 class="h2" id="enquiry-title">Enquiry form</h2>
-      <p class="lede enquiry__note">Fill this in and it opens in your email app, addressed to our lifting team &mdash; nothing is sent until you press send there. Prefer to write yourself? <a href="mailto:info@sunder.in">info@sunder.in</a>.</p>
+    <h2 class="h2 contact-layout__head" id="enquiry-title" data-reveal="up">Enquiry form</h2>
+    <p class="lede contact-layout__intro" data-reveal="up">Fill this in and it opens in your email app, addressed to our lifting team &mdash; nothing is sent until you press send there. Prefer to write yourself? <a href="mailto:info@sunder.in">info@sunder.in</a>.</p>
 
-      <form class="enquiry__form" data-enquiry novalidate>
-        <div class="field">
-          <label for="name">Your name</label>
-          <input id="name" name="name" type="text" autocomplete="name" required>
-        </div>
-        <div class="field">
-          <label for="company">Company</label>
-          <input id="company" name="company" type="text" autocomplete="organization">
-        </div>
-        <div class="field">
-          <label for="phone">Phone</label>
-          <input id="phone" name="phone" type="tel" autocomplete="tel" required>
-        </div>
-        <div class="field">
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" autocomplete="email">
-        </div>
-        <div class="field">
-          <label for="site">Site location</label>
-          <input id="site" name="site" type="text" placeholder="City or plant">
-        </div>
-        <div class="field">
-          <label for="dates">Dates</label>
-          <input id="dates" name="dates" type="text" placeholder="When the crane is needed">
-        </div>
-        <div class="field field--wide">
-          <label for="load">Load and radius</label>
-          <input id="load" name="load" type="text" placeholder="e.g. 45 T vessel at 18 m radius">
-        </div>
-        <div class="field field--wide">
-          <label for="message">What needs to move</label>
-          <textarea id="message" name="message" rows="5" placeholder="Access, ground conditions, duration &mdash; anything that helps us plan the lift."></textarea>
-        </div>
-        <div class="field field--wide enquiry__actions">
-          <button class="btn btn--solid btn--lg" type="submit" data-hover-group>Open enquiry email <span class="btn__icon" aria-hidden="true"><span data-arrow>&rarr;</span></span></button>
-          <p class="enquiry__status" role="status" data-enquiry-status></p>
-        </div>
-      </form>
-    </div>
+    <form class="enquiry__form contact-layout__body" data-enquiry novalidate>
+      <div class="field">
+        <label for="name">Your name</label>
+        <input id="name" name="name" type="text" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="company">Company</label>
+        <input id="company" name="company" type="text" autocomplete="organization">
+      </div>
+      <div class="field">
+        <label for="phone">Phone</label>
+        <input id="phone" name="phone" type="tel" autocomplete="tel" required>
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email">
+      </div>
+      <div class="field">
+        <label for="site">Site location</label>
+        <input id="site" name="site" type="text" placeholder="City or plant">
+      </div>
+      <div class="field">
+        <label for="dates">Dates</label>
+        <input id="dates" name="dates" type="text" placeholder="When the crane is needed">
+      </div>
+      <div class="field field--wide">
+        <label for="load">Load and radius</label>
+        <input id="load" name="load" type="text" placeholder="e.g. 45 T vessel at 18 m radius">
+      </div>
+      <div class="field field--wide">
+        <label for="message">What needs to move</label>
+        <textarea id="message" name="message" rows="5" placeholder="Access, ground conditions, duration &mdash; anything that helps us plan the lift."></textarea>
+      </div>
+      <div class="field field--wide enquiry__actions">
+        <button class="btn btn--solid btn--lg" type="submit" data-hover-group>Open enquiry email <span class="btn__icon" aria-hidden="true"><span data-arrow>&rarr;</span></span></button>
+        <p class="enquiry__status" role="status" data-enquiry-status></p>
+      </div>
+    </form>
 
-    <aside class="offices" aria-labelledby="offices-title">
-      <h2 class="h3" id="offices-title" data-reveal="up">Our offices</h2>
+    <h2 class="h2 contact-layout__head contact-layout__head--b" id="offices-title" data-reveal="up">Our offices</h2>
+    <p class="lede contact-layout__intro contact-layout__intro--b" data-reveal="up">Both are in Maharashtra &mdash; the yard at Maljipada handles storage and loading.</p>
 
+    <aside class="offices contact-layout__body contact-layout__body--b" aria-labelledby="offices-title">
       <div class="office" data-reveal="up">
         <h3 class="office__title">Corporate office</h3>
         <address>
@@ -143,7 +142,7 @@
         <a class="office__map" href="https://www.google.com/maps/search/?api=1&amp;query=Maljipada+Vasai+Thane+401201" target="_blank" rel="noopener">Open in Maps <span data-arrow aria-hidden="true">&rarr;</span></a>
       </div>
 
-      <div class="office office--plain" data-reveal="up">
+      <div class="office office--link" data-reveal="up">
         <h3 class="office__title">Looking for a machine?</h3>
         <p class="body-sm">The full equipment list, from 20-ton taxi cranes to the 800-ton all terrain, is on the fleet page.</p>
         <a class="office__map" href="fleet.html">View the fleet <span data-arrow aria-hidden="true">&rarr;</span></a>
