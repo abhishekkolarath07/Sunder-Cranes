@@ -1,20 +1,24 @@
-import os, sys
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+"""Build fleet.html from fleet_data.py and fleet_template.html.
+
+Run from the repo root:  python tools/gen_fleet.py
+"""
+import os
+import sys
+
+SP = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, SP)
+
 from fleet_data import TELESCOPIC, CRAWLER, LATTICE, ACCESS, YARD
 
+
 def by_capacity(rows):
-    # Heaviest first; "400 / 450 T" sorts on its first number.
+    """Heaviest first; "400 / 450 T" sorts on its first number."""
     def tons(row):
         return float(row[1].split('/')[0].strip().split()[0])
     return sorted(rows, key=tons, reverse=True)
 
+
 TELESCOPIC, CRAWLER, LATTICE = map(by_capacity, (TELESCOPIC, CRAWLER, LATTICE))
-
-SP = os.path.dirname(os.path.abspath(__file__))
-
-
-def units(n):
-    return str(n)
 
 
 def card(model, kind, specs, cat, n=1):
@@ -35,54 +39,75 @@ def card(model, kind, specs, cat, n=1):
       </article>"""
 
 
+def group_shell(cat, title, note, count_line, body):
+    return f"""    <section class="fleet-group" data-group="{cat}" aria-labelledby="group-{cat}">
+      <header class="fleet-group__head">
+        <h2 class="h3" id="group-{cat}">{title}</h2>
+        {count_line}
+      </header>
+      <p class="fleet-group__note">{note}</p>
+{body}
+    </section>"""
+
+
+def machine_grid(cards):
+    return '      <div class="machine-grid">\n' + '\n'.join(cards) + '\n      </div>'
+
+
 def crane_group(cat, title, kind, note, rows):
     cards = [
         card(model, kind, [
             ('Capacity', cap), ('Main boom', boom), ('Fixed jib', jib),
-            ('Luffing jib', luff), ('In fleet', units(n)), ('Year', year),
+            ('Luffing jib', luff), ('In fleet', str(n)), ('Year', year),
         ], cat, n)
         for model, cap, boom, jib, luff, n, year in rows
     ]
     total = sum(r[5] for r in rows)
-    return group_shell(cat, title, note, total, cards)
+    return group_shell(cat, title, note, f'<p class="fleet-group__count">{total} machines</p>', machine_grid(cards))
 
 
 def simple_group(cat, title, kind, note, rows, col):
-    cards = [
-        card(model, kind, [(col, spec), ('In fleet', units(n))], cat, n)
-        for model, spec, n in rows
-    ]
+    cards = [card(model, kind, [(col, spec), ('In fleet', str(n))], cat, n) for model, spec, n in rows]
     total = sum(r[2] for r in rows)
-    return group_shell(cat, title, note, total, cards)
+    return group_shell(cat, title, note, f'<p class="fleet-group__count">{total} machines</p>', machine_grid(cards))
 
 
-def group_shell(cat, title, note, total, cards):
-    return f"""    <section class="fleet-group" data-group="{cat}" aria-labelledby="group-{cat}">
-      <header class="fleet-group__head">
-        <h2 class="h3" id="group-{cat}">{title}</h2>
-        <p class="fleet-group__count">{total} machines</p>
-      </header>
-      <p class="fleet-group__note">{note}</p>
-      <div class="machine-grid">
-{chr(10).join(cards)}
-      </div>
-    </section>"""
+# The client sheet lists trailer types only — no models, counts or capacities.
+TRAILERS = [
+    ('Low bed trailers', 'Low deck for tall or heavy loads.'),
+    ('Semi low bed trailers', 'Mid-height deck for general heavy haulage.'),
+    ('High bed trailers', 'Standard deck for plant and equipment.'),
+    ('Hydraulic multi-axles', 'Indian and imported, for the heaviest moves.'),
+]
+
+
+def transport_group():
+    tiles = '\n'.join(
+        f"""        <article class="transport-card">
+          <h3 class="h3">{name}</h3>
+          <p class="body-sm">{note}</p>
+          <p class="transport-card__meta">Capacity quoted per move</p>
+        </article>"""
+        for name, note in TRAILERS)
+    body = '      <div class="transport-grid">\n' + tiles + '\n      </div>'
+    note = ('Special trailers for girders, cranes and over-dimensional cargo. '
+            'Deck types below; the exact configuration and capacity are quoted per move.')
+    return group_shell('transport', 'Trailers &amp; hydraulic multi-axles', note, '', body)
 
 
 groups = [
-    crane_group('telescopic', 'Telescopic cranes', 'All terrain crane', 'Truck-mounted and all-terrain cranes from 20 to 800 tons, road-mobile and quick to rig.', TELESCOPIC),
-    crane_group('crawler', 'Crawler cranes', 'Crawler crane', 'Long-boom lattice crawlers for sustained heavy lifts and luffing jib work on site.', CRAWLER),
-    crane_group('lattice', 'Lattice boom cranes', 'Lattice boom crane', 'Truck-mounted lattice cranes; the two capacities are the boom and jib ratings.', LATTICE),
-    simple_group('access', 'Boom &amp; scissor lifts, telehandlers', 'Access platform', 'Access platforms rated by working height, for maintenance and erection at height.', ACCESS, 'Reach / capacity'),
-    simple_group('yard', 'Hydra cranes &amp; forklifts', 'Yard handling', 'Pick-and-carry cranes and forklifts for yard handling and short moves.', YARD, 'Capacity'),
+    crane_group('telescopic', 'Telescopic cranes', 'All terrain crane',
+                'Truck-mounted and all-terrain cranes from 20 to 800 tons, road-mobile and quick to rig.', TELESCOPIC),
+    crane_group('crawler', 'Crawler cranes', 'Crawler crane',
+                'Long-boom lattice crawlers for sustained heavy lifts and luffing jib work on site.', CRAWLER),
+    crane_group('lattice', 'Lattice boom cranes', 'Lattice boom crane',
+                'Truck-mounted lattice cranes; the two capacities are the boom and jib ratings.', LATTICE),
+    simple_group('access', 'Boom &amp; scissor lifts, telehandlers', 'Access platform',
+                 'Access platforms rated by working height, for maintenance and erection at height.', ACCESS, 'Reach / capacity'),
+    simple_group('yard', 'Hydra cranes &amp; forklifts', 'Yard handling',
+                 'Pick-and-carry cranes and forklifts for yard handling and short moves.', YARD, 'Capacity'),
+    transport_group(),
 ]
-
-transport = '''    <section class="fleet-group" data-group="transport" aria-labelledby="group-transport">
-      <header class="fleet-group__head">
-        <h2 class="h3" id="group-transport">Trailers &amp; hydraulic multi-axles</h2>
-      </header>
-      <p class="fleet-group__note">Low bed, semi low bed and high bed trailers, plus Indian and imported multi-axle trailers for girders, cranes and over-dimensional cargo.</p>
-    </section>'''
 
 total = sum(r[5] for r in TELESCOPIC + CRAWLER + LATTICE) + sum(r[2] for r in ACCESS + YARD)
 
@@ -102,7 +127,7 @@ filter_html = '\n'.join(
 
 template = open(os.path.join(SP, 'fleet_template.html'), encoding='utf-8').read()
 out = (template
-       .replace('<!--GROUPS-->', '\n\n'.join(groups + [transport]))
+       .replace('<!--GROUPS-->', '\n\n'.join(groups))
        .replace('<!--FILTERS-->', filter_html)
        .replace('{{TOTAL}}', str(total)))
 open('fleet.html', 'w', encoding='utf-8', newline='\n').write(out)

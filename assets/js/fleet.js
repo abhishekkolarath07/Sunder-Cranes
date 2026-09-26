@@ -28,8 +28,8 @@
       group.hidden = !match;
       if (match) { shown += machinesIn(group); visible.push(group); }
     });
-    // The transport group lists no individual machines, so it has no count.
-    if (countOut) countOut.textContent = shown ? `${shown} machines` : '';
+    // The transport group lists trailer types, not counted machines.
+    if (countOut) countOut.textContent = shown ? `${shown} machines` : 'Quoted per move';
     if (empty) empty.classList.toggle('is-visible', visible.length === 0);
 
     if (!animate) return;   // first run: leave the scroll reveal to do its job
