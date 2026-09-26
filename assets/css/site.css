@@ -654,22 +654,44 @@ select { appearance: none; -webkit-appearance: none; }
 .fleet-group__count { font-size: 14px; color: var(--text-muted); font-variant-numeric: tabular-nums; }
 .fleet-group__note { max-width: 70ch; margin-top: 14px; font-size: 15px; color: var(--text-muted); }
 
-/* Spec tables: one row per model, horizontally scrollable on small screens */
-.fleet-table__scroll { margin-top: 20px; overflow-x: auto; }
-.fleet-table { width: 100%; min-width: 720px; border-collapse: collapse; font-variant-numeric: tabular-nums; }
-.fleet-table--slim { min-width: 420px; }
-.fleet-table th, .fleet-table td { padding: 14px 16px 14px 0; text-align: left; }
-.fleet-table thead th {
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--text-muted);
-  border-bottom: 1px solid var(--line-strong);
+/* Machine cards: photo, type badge, model, spec pairs, enquiry button */
+.machine-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 28px; }
+@media (min-width: 700px) { .machine-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1100px) { .machine-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.machine {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--white);
+  transition: border-color .25s ease, box-shadow .25s ease;
 }
-.fleet-table tbody tr { border-bottom: 1px solid var(--line); }
-.fleet-table tbody tr:hover { background: var(--tile); box-shadow: -12px 0 0 var(--tile), 12px 0 0 var(--tile); }
-.fleet-table tbody th { font-size: 16px; font-weight: 500; letter-spacing: -.01em; white-space: nowrap; }
-.fleet-table tbody td { font-size: 15px; color: var(--text-muted); white-space: nowrap; }
-.fleet-table tbody td.is-key { color: var(--text); font-weight: 500; }
+.machine:hover { border-color: var(--line-strong); box-shadow: 0 10px 30px rgba(17, 18, 20, .08); }
+.machine[hidden] { display: none; }
+.machine__media { position: relative; border-radius: 0; }
+.machine__badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: rgba(17, 18, 20, .78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.machine__body { display: flex; flex: 1; flex-direction: column; padding: 24px; }
+.machine__body .h3 { margin-bottom: 24px; }
+.machine__specs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 32px; margin-bottom: 28px; }
+.machine__specs .spec { display: flex; flex-direction: column; gap: 6px; }
+.machine__specs .spec__value { font-size: 17px; font-weight: 500; color: var(--text); font-variant-numeric: tabular-nums; }
+.machine__cta { margin-top: auto; justify-content: space-between; padding-right: 6px; }
+
 .machines__empty { display: none; max-width: var(--max); margin: 48px auto 0; text-align: center; color: var(--text-muted); }
 .machines__empty.is-visible { display: block; }
 

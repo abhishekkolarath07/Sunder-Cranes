@@ -17,8 +17,8 @@
   const empty = document.querySelector('[data-empty]');
 
   const machinesIn = (group) =>
-    Array.from(group.querySelectorAll('tbody tr'))
-      .reduce((n, row) => n + (parseInt(row.dataset.units, 10) || 1), 0);
+    Array.from(group.querySelectorAll('[data-machine]'))
+      .reduce((n, card) => n + (parseInt(card.dataset.units, 10) || 1), 0);
 
   function apply(category, animate) {
     let shown = 0;

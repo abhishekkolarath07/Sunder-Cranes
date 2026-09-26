@@ -17,70 +17,64 @@ def units(n):
     return str(n)
 
 
-def crane_table(cat, title, note, rows):
-    body = []
-    for model, cap, boom, jib, luff, n, year in rows:
-        body.append(
-            f'          <tr data-units="{n}">'
-            f'<th scope="row">{model}</th>'
-            f'<td class="is-key">{cap}</td>'
-            f'<td>{boom}</td><td>{jib}</td><td>{luff}</td>'
-            f'<td>{units(n)}</td><td>{year or "—"}</td></tr>'
-        )
+def card(model, kind, specs, cat, n=1):
+    """One machine card: photo slot, type badge, model, spec pairs, enquiry link."""
+    pairs = ''.join(
+        f'<div class="spec"><span class="label">{k}</span><span class="spec__value">{v}</span></div>'
+        for k, v in specs if v and v not in ('—', '&mdash;'))
+    return f"""      <article class="machine" data-machine data-cat="{cat}" data-units="{n}" data-hover-group data-reveal="card">
+        <div class="machine__media media media--16x10">
+          <div class="media__inner" data-hover-img><div class="media__placeholder"><span>{model}</span></div></div>
+          <span class="machine__badge">{kind}</span>
+        </div>
+        <div class="machine__body">
+          <h3 class="h3">{model}</h3>
+          <div class="machine__specs">{pairs}</div>
+          <a class="btn btn--solid machine__cta" href="mailto:info@sunder.in?subject={model.replace(' ', '%20')}" data-hover-group>Enquire now <span class="btn__icon" aria-hidden="true"><span data-arrow>&rarr;</span></span></a>
+        </div>
+      </article>"""
+
+
+def crane_group(cat, title, kind, note, rows):
+    cards = [
+        card(model, kind, [
+            ('Capacity', cap), ('Main boom', boom), ('Fixed jib', jib),
+            ('Luffing jib', luff), ('In fleet', units(n)), ('Year', year),
+        ], cat, n)
+        for model, cap, boom, jib, luff, n, year in rows
+    ]
     total = sum(r[5] for r in rows)
-    return f'''    <section class="fleet-group" data-group="{cat}" aria-labelledby="group-{cat}">
-      <header class="fleet-group__head">
-        <h2 class="h3" id="group-{cat}">{title}</h2>
-        <p class="fleet-group__count">{total} machines</p>
-      </header>
-      <p class="fleet-group__note">{note}</p>
-      <div class="fleet-table__scroll">
-        <table class="fleet-table">
-          <thead>
-            <tr><th scope="col">Make &amp; model</th><th scope="col">Capacity</th><th scope="col">Main boom</th><th scope="col">Fixed jib</th><th scope="col">Luffing jib</th><th scope="col">In fleet</th><th scope="col">Year</th></tr>
-          </thead>
-          <tbody>
-{chr(10).join(body)}
-          </tbody>
-        </table>
-      </div>
-    </section>'''
+    return group_shell(cat, title, note, total, cards)
 
 
-def simple_table(cat, title, note, rows, col):
-    body = []
-    for model, spec, n in rows:
-        body.append(
-            f'          <tr data-units="{n}">'
-            f'<th scope="row">{model}</th>'
-            f'<td class="is-key">{spec}</td><td>{units(n)}</td></tr>'
-        )
+def simple_group(cat, title, kind, note, rows, col):
+    cards = [
+        card(model, kind, [(col, spec), ('In fleet', units(n))], cat, n)
+        for model, spec, n in rows
+    ]
     total = sum(r[2] for r in rows)
-    return f'''    <section class="fleet-group" data-group="{cat}" aria-labelledby="group-{cat}">
+    return group_shell(cat, title, note, total, cards)
+
+
+def group_shell(cat, title, note, total, cards):
+    return f"""    <section class="fleet-group" data-group="{cat}" aria-labelledby="group-{cat}">
       <header class="fleet-group__head">
         <h2 class="h3" id="group-{cat}">{title}</h2>
         <p class="fleet-group__count">{total} machines</p>
       </header>
       <p class="fleet-group__note">{note}</p>
-      <div class="fleet-table__scroll">
-        <table class="fleet-table fleet-table--slim">
-          <thead>
-            <tr><th scope="col">Make &amp; model</th><th scope="col">{col}</th><th scope="col">In fleet</th></tr>
-          </thead>
-          <tbody>
-{chr(10).join(body)}
-          </tbody>
-        </table>
+      <div class="machine-grid">
+{chr(10).join(cards)}
       </div>
-    </section>'''
+    </section>"""
 
 
 groups = [
-    crane_table('telescopic', 'Telescopic cranes', 'Truck-mounted and all-terrain cranes from 20 to 800 tons, road-mobile and quick to rig.', TELESCOPIC),
-    crane_table('crawler', 'Crawler cranes', 'Long-boom lattice crawlers for sustained heavy lifts and luffing jib work on site.', CRAWLER),
-    crane_table('lattice', 'Lattice boom cranes', 'Truck-mounted lattice cranes; the two capacities are the boom and jib ratings.', LATTICE),
-    simple_table('access', 'Boom &amp; scissor lifts, telehandlers', 'Access platforms rated by working height, for maintenance and erection at height.', ACCESS, 'Reach / capacity'),
-    simple_table('yard', 'Hydra cranes &amp; forklifts', 'Pick-and-carry cranes and forklifts for yard handling and short moves.', YARD, 'Capacity'),
+    crane_group('telescopic', 'Telescopic cranes', 'All terrain crane', 'Truck-mounted and all-terrain cranes from 20 to 800 tons, road-mobile and quick to rig.', TELESCOPIC),
+    crane_group('crawler', 'Crawler cranes', 'Crawler crane', 'Long-boom lattice crawlers for sustained heavy lifts and luffing jib work on site.', CRAWLER),
+    crane_group('lattice', 'Lattice boom cranes', 'Lattice boom crane', 'Truck-mounted lattice cranes; the two capacities are the boom and jib ratings.', LATTICE),
+    simple_group('access', 'Boom &amp; scissor lifts, telehandlers', 'Access platform', 'Access platforms rated by working height, for maintenance and erection at height.', ACCESS, 'Reach / capacity'),
+    simple_group('yard', 'Hydra cranes &amp; forklifts', 'Yard handling', 'Pick-and-carry cranes and forklifts for yard handling and short moves.', YARD, 'Capacity'),
 ]
 
 transport = '''    <section class="fleet-group" data-group="transport" aria-labelledby="group-transport">
