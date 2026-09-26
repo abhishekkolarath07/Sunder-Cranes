@@ -32,14 +32,36 @@
     if (countOut) countOut.textContent = shown ? `${shown} machines` : '';
     if (empty) empty.classList.toggle('is-visible', visible.length === 0);
 
-    if (animate && M && !Site.reduced && visible.length) {
-      M.animate(visible, { opacity: [0, 1], y: [12, 0] }, { duration: 0.4, ease: Site.EASE, delay: M.stagger(0.05) });
+    if (!animate) return;   // first run: leave the scroll reveal to do its job
+
+    // Cards start hidden and are revealed on scroll. Filtering can move a card
+    // that was never scrolled past into view, so reveal every shown card here.
+    const cards = visible.flatMap((group) => Array.from(group.querySelectorAll('[data-machine]')));
+    if (M && !Site.reduced && cards.length) {
+      M.animate(cards, { opacity: [0, 1], y: [12, 0] }, { duration: 0.4, ease: Site.EASE, delay: M.stagger(0.03, { startDelay: 0.05 }) });
+    } else {
+      cards.forEach((card) => { card.style.opacity = '1'; card.style.transform = 'none'; });
     }
+    // Heights changed, so scroll-linked animations need their positions again.
+    if (window.ScrollTrigger) ScrollTrigger.refresh();
+  }
+
+  // Filtering makes the page much shorter, so bring the results back into
+  // view — otherwise the visitor is left looking at the footer.
+  function showResults() {
+    const list = document.querySelector('.fleet-groups');
+    const toolbar = document.querySelector('.toolbar');
+    if (!list) return;
+    const offset = (toolbar ? toolbar.offsetHeight : 0) + parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) + 16;
+    const top = list.getBoundingClientRect().top + window.scrollY - offset;
+    if (window.scrollY <= top) return;   // already above the list
+    window.scrollTo({ top, behavior: Site.reduced ? 'auto' : 'smooth' });
   }
 
   filters.forEach((btn) => btn.addEventListener('click', () => {
     filters.forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
     apply(btn.dataset.filter, true);
+    showResults();
   }));
   apply('all', false);
 })();
