@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Sunder Cranes</title>
+<meta name="description" content="Talk to Sunder Cranes about a lift: offices in Kashimira, Thane and Maljipada, Vasai. Call +91 22 2845 8114 or send the load, radius and site for a quotation.">
+<script>
+  // Hidden reveal states only apply when scripts run and the visitor allows motion.
+  document.documentElement.classList.add(
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'no-motion' : 'js-motion'
+  );
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body class="page-contact">
+
+<header class="site-header" data-nav>
+  <div class="site-header__inner">
+    <a class="brand" href="index.html">
+      <img src="brand/sunder-mark.png" alt="">
+      <span>Sunder Cranes</span>
+    </a>
+    <nav class="site-nav desk-only" aria-label="Primary">
+      <a href="index.html#services">Services</a>
+      <a href="fleet.html">Fleet</a>
+      <a href="index.html#safety">Safety</a>
+      <a href="index.html#about">About</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn--solid desk-only" href="tel:+912228458114" data-hover-group>+91 22 2845 8114 <span class="btn__icon" aria-hidden="true"><span data-arrow>&rarr;</span></span></a>
+      <button class="menu-toggle mob-only" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>Menu</button>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-menu" id="mobile-menu" aria-label="Mobile" data-menu>
+  <a href="index.html">Home</a>
+  <a href="index.html#services">Services</a>
+  <a href="fleet.html">Fleet</a>
+  <a href="index.html#safety">Safety</a>
+  <a href="index.html#about">About</a>
+  <a class="btn btn--solid" href="tel:+912228458114">Call +91 22 2845 8114 <span class="btn__icon" aria-hidden="true">&rarr;</span></a>
+</nav>
+
+<main>
+
+<section class="page-hero" aria-labelledby="contact-title">
+  <div class="page-hero__inner">
+    <p class="eyebrow" data-hero-in>Contact</p>
+    <h1 class="h1 page-hero__title" id="contact-title" data-hero-in>Tell us what needs <span class="soft">to move.</span></h1>
+    <div class="page-hero__intro">
+      <p class="lede" data-hero-in>Send the load, the radius and the site. We come back with a crane configuration, a lift plan and a quotation. For an urgent mobilisation, call the lifting team directly.</p>
+      <div class="contact-quick" data-hero-in>
+        <a class="contact-quick__card" href="tel:+912228458114">
+          <span class="label">Call</span>
+          <span class="contact-quick__value">+91 22 2845 8114</span>
+          <span class="contact-quick__alt">+91 22 2845 7201</span>
+        </a>
+        <a class="contact-quick__card" href="mailto:info@sunder.in">
+          <span class="label">Email</span>
+          <span class="contact-quick__value">info@sunder.in</span>
+          <span class="contact-quick__alt">Fax +91 22 2845 7403</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section contact-main" aria-labelledby="enquiry-title">
+  <div class="contact-layout">
+
+    <div class="enquiry" data-reveal="up">
+      <h2 class="h2" id="enquiry-title">Enquiry form</h2>
+      <p class="lede enquiry__note">Fill this in and it opens in your email app, addressed to our lifting team &mdash; nothing is sent until you press send there. Prefer to write yourself? <a href="mailto:info@sunder.in">info@sunder.in</a>.</p>
+
+      <form class="enquiry__form" data-enquiry novalidate>
+        <div class="field">
+          <label for="name">Your name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="company">Company</label>
+          <input id="company" name="company" type="text" autocomplete="organization">
+        </div>
+        <div class="field">
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="site">Site location</label>
+          <input id="site" name="site" type="text" placeholder="City or plant">
+        </div>
+        <div class="field">
+          <label for="dates">Dates</label>
+          <input id="dates" name="dates" type="text" placeholder="When the crane is needed">
+        </div>
+        <div class="field field--wide">
+          <label for="load">Load and radius</label>
+          <input id="load" name="load" type="text" placeholder="e.g. 45 T vessel at 18 m radius">
+        </div>
+        <div class="field field--wide">
+          <label for="message">What needs to move</label>
+          <textarea id="message" name="message" rows="5" placeholder="Access, ground conditions, duration &mdash; anything that helps us plan the lift."></textarea>
+        </div>
+        <div class="field field--wide enquiry__actions">
+          <button class="btn btn--solid btn--lg" type="submit" data-hover-group>Open enquiry email <span class="btn__icon" aria-hidden="true"><span data-arrow>&rarr;</span></span></button>
+          <p class="enquiry__status" role="status" data-enquiry-status></p>
+        </div>
+      </form>
+    </div>
+
+    <aside class="offices" aria-labelledby="offices-title">
+      <h2 class="h3" id="offices-title" data-reveal="up">Our offices</h2>
+
+      <div class="office" data-reveal="up">
+        <h3 class="office__title">Corporate office</h3>
+        <address>
+          Sunder Cranes Pvt. Ltd.<br>
+          Near Dahisar Check Naka, Western Express Highway,<br>
+          Kashimira, Thane 401104,<br>
+          Maharashtra, India
+        </address>
+        <a class="office__map" href="https://www.google.com/maps/search/?api=1&amp;query=Dahisar+Check+Naka+Western+Express+Highway+Kashimira+Thane+401104" target="_blank" rel="noopener">Open in Maps <span data-arrow aria-hidden="true">&rarr;</span></a>
+      </div>
+
+      <div class="office" data-reveal="up">
+        <h3 class="office__title">Warehousing &amp; works</h3>
+        <address>
+          S. No. 72, H. No. 1, near Ramdev Film City,<br>
+          Maljipada, Taluka Vasai,<br>
+          Dist. Thane 401201,<br>
+          Maharashtra, India
+        </address>
+        <a class="office__map" href="https://www.google.com/maps/search/?api=1&amp;query=Maljipada+Vasai+Thane+401201" target="_blank" rel="noopener">Open in Maps <span data-arrow aria-hidden="true">&rarr;</span></a>
+      </div>
+
+      <div class="office office--plain" data-reveal="up">
+        <h3 class="office__title">Looking for a machine?</h3>
+        <p class="body-sm">The full equipment list, from 20-ton taxi cranes to the 800-ton all terrain, is on the fleet page.</p>
+        <a class="office__map" href="fleet.html">View the fleet <span data-arrow aria-hidden="true">&rarr;</span></a>
+      </div>
+    </aside>
+
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__top">
+      <div>
+        <a class="brand site-footer__brand" href="index.html"><img src="brand/sunder-mark.png" alt=""><span>Sunder Cranes</span></a>
+        <p class="site-footer__tag">Heavy lifting &amp; transportation across India.</p>
+        <address class="site-footer__address">
+          Near Dahisar Check Naka, Western Express Highway,<br>
+          Kashimira, Thane 401104, Maharashtra
+        </address>
+        <p class="site-footer__contact"><a href="tel:+912228458114">+91 22 2845 8114</a> &middot; <a href="mailto:info@sunder.in">info@sunder.in</a></p>
+      </div>
+      <nav class="site-footer__links" aria-label="Footer">
+        <div><h2>Company</h2><ul><li><a href="index.html#about">About</a></li><li><a href="index.html#safety">Safety</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div><h2>Services</h2><ul><li><a href="index.html#services">Capabilities</a></li><li><a href="fleet.html">Fleet</a></li><li><a href="index.html">Privacy</a></li></ul></div>
+      </nav>
+    </div>
+    <div class="site-footer__base">
+      <span>&copy; 2026 Sunder Cranes Pvt. Ltd.</span>
+      <span>Heavy lifting. Precisely executed.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/motion@13.4.0/dist/motion.js"></script>
+<script src="assets/js/site.js"></script>
+<script src="assets/js/contact.js"></script>
+</body>
+</html>
