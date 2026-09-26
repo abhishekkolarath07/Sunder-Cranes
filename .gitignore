@@ -1,3 +1,7 @@
 .thumbnail
 .image-slots.state.json
 .vercel
+
+# Python bytecode
+__pycache__/
+*.pyc

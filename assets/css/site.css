@@ -483,11 +483,11 @@ select { appearance: none; -webkit-appearance: none; }
 @media (max-width: 899px) { .fleet-cards { grid-template-columns: 1fr; max-width: 560px; margin-left: 0; } }
 .fleet-card { display: flex; flex-direction: column; padding: 8px; border-radius: var(--radius); background: var(--ink-850); transition: background-color .3s ease; }
 .fleet-card:hover { background: var(--ink-800); }
-.fleet-card__body { display: flex; flex-direction: column; gap: 6px; padding: 16px 12px 12px; }
+.fleet-card__body { display: flex; flex-direction: column; gap: 10px; padding: 24px 20px 24px; }
 .fleet-card__type { font-size: 13px; color: var(--text-on-dark-muted); }
 .fleet-card .h3 { color: var(--text-on-dark); }
-.fleet-card__specs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line-dark); }
-.spec { display: flex; flex-direction: column; gap: 2px; }
+.fleet-card__specs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 32px; margin-top: 14px; padding-top: 24px; border-top: 1px solid var(--line-dark); }
+.spec { display: flex; flex-direction: column; gap: 6px; }
 .spec__value { font-size: 17px; font-weight: 500; color: var(--text-on-dark); font-variant-numeric: tabular-nums; }
 .fleet-more { display: flex; margin-top: 32px; }
 
@@ -576,6 +576,27 @@ select { appearance: none; -webkit-appearance: none; }
 .contact-panel { display: grid; gap: 32px 64px; align-items: end; }
 @media (min-width: 900px) { .contact-panel { grid-template-columns: 1.2fr 1fr; } }
 .contact__actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.contact-details {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px 48px;
+  margin-top: 8px;
+  padding-top: clamp(32px, 4vw, 48px);
+  border-top: 1px solid var(--line-strong);
+}
+@media (min-width: 900px) { .contact-details { grid-column: 1 / -1; } }
+@media (max-width: 699px) { .contact-details { grid-template-columns: 1fr; gap: 28px; } }
+.contact-card__title { margin-bottom: 12px; font-size: 14px; font-weight: 500; color: var(--text); }
+.contact-card address { font-style: normal; font-size: 15px; line-height: 1.65; color: var(--text-muted); }
+.contact-list { display: flex; flex-direction: column; gap: 6px; margin: 0; padding: 0; list-style: none; font-size: 15px; }
+.contact-list a { color: var(--text-muted); transition: color .2s ease; }
+.contact-list a:hover { color: var(--accent); }
+.contact-list__muted { color: var(--text-soft); }
+
+.site-footer__address { margin-top: 12px; font-style: normal; font-size: 15px; line-height: 1.6; color: var(--text-muted); }
+.site-footer__contact { margin-top: 8px; font-size: 15px; color: var(--text-muted); }
+.site-footer__contact a { transition: color .2s ease; }
+.site-footer__contact a:hover { color: var(--accent); }
 
 /* 8. Fleet page ------------------------------------------------------------ */
 .page-hero { padding: calc(var(--nav-h) + clamp(48px, 7vw, 96px)) var(--gutter) clamp(40px, 5vw, 56px); }
@@ -627,28 +648,28 @@ select { appearance: none; -webkit-appearance: none; }
 }
 
 .machines { padding: clamp(32px, 4vw, 48px) var(--gutter) 0; }
-.machine-grid { display: grid; grid-template-columns: 1fr; gap: 12px; max-width: var(--max); margin: 0 auto; }
-@media (min-width: 700px) { .machine-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (min-width: 1200px) { .machine-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-.machine {
-  display: flex;
-  flex-direction: column;
-  padding: 8px;
-  border-radius: var(--radius);
-  background: var(--tile);
-  transition: background-color .25s ease;
+.fleet-groups { display: flex; flex-direction: column; gap: clamp(48px, 6vw, 80px); max-width: var(--max); margin: 0 auto; }
+.fleet-group[hidden] { display: none; }
+.fleet-group__head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding-bottom: 12px; border-bottom: 2px solid var(--text); }
+.fleet-group__count { font-size: 14px; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+.fleet-group__note { max-width: 70ch; margin-top: 14px; font-size: 15px; color: var(--text-muted); }
+
+/* Spec tables: one row per model, horizontally scrollable on small screens */
+.fleet-table__scroll { margin-top: 20px; overflow-x: auto; }
+.fleet-table { width: 100%; min-width: 720px; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.fleet-table--slim { min-width: 420px; }
+.fleet-table th, .fleet-table td { padding: 14px 16px 14px 0; text-align: left; }
+.fleet-table thead th {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--line-strong);
 }
-.machine:hover { background: var(--tile-strong); }
-.machine[hidden] { display: none; }
-.machine__body { display: flex; flex: 1; flex-direction: column; gap: 4px; padding: 16px 12px 12px; }
-.machine__type { font-size: 13px; color: var(--text-muted); }
-.machine__specs { display: grid; grid-template-columns: 1fr 1fr; gap: 0 20px; margin: 16px 0 20px; }
-.machine__spec { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 9px 0; border-top: 1px solid var(--line-strong); }
-.machine__spec dt { font-size: 14px; color: var(--text-muted); }
-.machine__spec dd { font-size: 14px; font-weight: 500; font-variant-numeric: tabular-nums; }
-.machine__spec dd.is-key { color: var(--accent); }
-.machine__spec dd.is-empty { color: var(--text-soft); font-weight: 400; }
-.machine__cta { margin-top: auto; align-self: flex-start; }
+.fleet-table tbody tr { border-bottom: 1px solid var(--line); }
+.fleet-table tbody tr:hover { background: var(--tile); box-shadow: -12px 0 0 var(--tile), 12px 0 0 var(--tile); }
+.fleet-table tbody th { font-size: 16px; font-weight: 500; letter-spacing: -.01em; white-space: nowrap; }
+.fleet-table tbody td { font-size: 15px; color: var(--text-muted); white-space: nowrap; }
+.fleet-table tbody td.is-key { color: var(--text); font-weight: 500; }
 .machines__empty { display: none; max-width: var(--max); margin: 48px auto 0; text-align: center; color: var(--text-muted); }
 .machines__empty.is-visible { display: block; }
 

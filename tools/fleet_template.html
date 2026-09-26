@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Our Fleet — Sunder Cranes</title>
+<meta name="description" content="All-terrain, crawler and hydraulic mobile cranes from 150 to 750 tons, owned, maintained and operated in-house by Sunder Cranes.">
+<script>
+  // Hidden reveal states only apply when scripts run and the visitor allows motion.
+  document.documentElement.classList.add(
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'no-motion' : 'js-motion'
+  );
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body class="page-fleet">
+
+<header class="site-header" data-nav>
+  <div class="site-header__inner">
+    <a class="brand" href="index.html">
+      <img src="brand/sunder-mark.png" alt="">
+      <span>Sunder Cranes</span>
+    </a>
+    <nav class="site-nav desk-only" aria-label="Primary">
+      <a href="index.html#services">Services</a>
+      <a href="fleet.html" aria-current="page">Fleet</a>
+      <a href="index.html#safety">Safety</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn--solid desk-only" href="index.html#contact" data-hover-group>Request a quote <span class="btn__icon" aria-hidden="true"><span data-arrow>&rarr;</span></span></a>
+      <button class="menu-toggle mob-only" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>Menu</button>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-menu" id="mobile-menu" aria-label="Mobile" data-menu>
+  <a href="index.html">Home</a>
+  <a href="index.html#services">Services</a>
+  <a href="index.html#safety">Safety</a>
+  <a href="index.html#about">About</a>
+  <a class="btn btn--solid" href="index.html#contact">Request a quote <span class="btn__icon" aria-hidden="true">&rarr;</span></a>
+</nav>
+
+<main>
+
+<section class="page-hero" aria-labelledby="fleet-title">
+  <div class="page-hero__inner">
+    <p class="eyebrow" data-hero-in>Our equipment</p>
+    <h1 class="h1 page-hero__title" id="fleet-title" data-hero-in>Our fleet. <span class="soft">Owned and operated in-house.</span></h1>
+    <div class="page-hero__intro">
+      <p class="lede" data-hero-in>Telescopic, crawler and lattice boom cranes up to 800 tons, access platforms, hydra cranes and multi-axle trailers &mdash; maintained in-house and mobilised across India with certified operators and full lift documentation.</p>
+      <dl class="page-hero__stats" data-hero-in>
+        <div class="stat"><dt class="stat__label">Max capacity</dt><dd class="stat__value">800<small>T</small></dd></div>
+        <div class="stat"><dt class="stat__label">Max main boom</dt><dd class="stat__value">96<small>m</small></dd></div>
+        <div class="stat"><dt class="stat__label">Machines</dt><dd class="stat__value">{{TOTAL}}</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<div class="toolbar">
+  <div class="toolbar__bar">
+    <div class="filters" role="group" aria-label="Filter by equipment type">
+<!--FILTERS-->
+    </div>
+    <div class="toolbar__end">
+      <span class="toolbar__count" aria-live="polite" data-count-out>{{TOTAL}} machines</span>
+    </div>
+  </div>
+</div>
+
+<section class="machines" aria-label="Equipment list">
+  <div class="fleet-groups">
+<!--GROUPS-->
+  </div>
+  <p class="machines__empty" data-empty>Nothing in this class &mdash; ask us about availability.</p>
+</section>
+
+<section class="section section--tile" aria-labelledby="fleet-cta-title">
+  <div class="contact-panel" data-reveal="up">
+    <div>
+      <p class="eyebrow">Get a quote</p>
+      <h2 class="h2" id="fleet-cta-title">Need a machine <span class="soft">for your next lift?</span></h2>
+    </div>
+    <div>
+      <p class="lede">Send us the load, the radius and the site. We return a configuration, a lift plan and a quotation.</p>
+      <div class="contact__actions">
+        <a class="btn btn--solid btn--lg" href="mailto:info@sunder.in" data-hover-group>Email an enquiry <span class="btn__icon" aria-hidden="true"><span data-arrow>&rarr;</span></span></a>
+        <a class="btn btn--outline btn--lg" href="tel:+912228458114">+91 22 2845 8114</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__top">
+      <div>
+        <a class="brand site-footer__brand" href="index.html"><img src="brand/sunder-mark.png" alt=""><span>Sunder Cranes</span></a>
+        <p class="site-footer__tag">Heavy lifting &amp; transportation across India.</p>
+        <address class="site-footer__address">
+          Near Dahisar Check Naka, Western Express Highway,<br>
+          Kashimira, Thane 401104, Maharashtra
+        </address>
+        <p class="site-footer__contact"><a href="tel:+912228458114">+91 22 2845 8114</a> &middot; <a href="mailto:info@sunder.in">info@sunder.in</a></p>
+      </div>
+      <nav class="site-footer__links" aria-label="Footer">
+        <div><h2>Company</h2><ul><li><a href="index.html#about">About</a></li><li><a href="index.html#safety">Safety</a></li><li><a href="index.html#contact">Contact</a></li></ul></div>
+        <div><h2>Services</h2><ul><li><a href="index.html#services">Capabilities</a></li><li><a href="fleet.html">Fleet</a></li><li><a href="index.html">Privacy</a></li></ul></div>
+      </nav>
+    </div>
+    <div class="site-footer__base">
+      <span>&copy; 2026 Sunder Cranes Pvt. Ltd.</span>
+      <span>Heavy lifting. Precisely executed.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/motion@13.4.0/dist/motion.js"></script>
+<script src="assets/js/site.js"></script>
+<script src="assets/js/fleet.js"></script>
+</body>
+</html>

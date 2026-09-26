@@ -53,11 +53,11 @@
     <p class="eyebrow" data-hero-in>Our equipment</p>
     <h1 class="h1 page-hero__title" id="fleet-title" data-hero-in>Our fleet. <span class="soft">Owned and operated in-house.</span></h1>
     <div class="page-hero__intro">
-      <p class="lede" data-hero-in>Maintained in-house, with capacities from 15 to 750 tons, mobilised across India with certified operators and full lift documentation.</p>
+      <p class="lede" data-hero-in>Telescopic, crawler and lattice boom cranes up to 800 tons, access platforms, hydra cranes and multi-axle trailers &mdash; maintained in-house and mobilised across India with certified operators and full lift documentation.</p>
       <dl class="page-hero__stats" data-hero-in>
-        <div class="stat"><dt class="stat__label">Max capacity</dt><dd class="stat__value">750<small>T</small></dd></div>
-        <div class="stat"><dt class="stat__label">Max boom</dt><dd class="stat__value">93<small>m</small></dd></div>
-        <div class="stat"><dt class="stat__label">Machines listed</dt><dd class="stat__value">12</dd></div>
+        <div class="stat"><dt class="stat__label">Max capacity</dt><dd class="stat__value">800<small>T</small></dd></div>
+        <div class="stat"><dt class="stat__label">Max main boom</dt><dd class="stat__value">96<small>m</small></dd></div>
+        <div class="stat"><dt class="stat__label">Machines</dt><dd class="stat__value">83</dd></div>
       </dl>
     </div>
   </div>
@@ -65,236 +65,170 @@
 
 <div class="toolbar">
   <div class="toolbar__bar">
-    <div class="filters" role="group" aria-label="Filter by crane type">
+    <div class="filters" role="group" aria-label="Filter by equipment type">
       <button class="filter" type="button" data-filter="all" aria-pressed="true">All equipment</button>
-      <button class="filter" type="button" data-filter="at" aria-pressed="false">All terrain</button>
+      <button class="filter" type="button" data-filter="telescopic" aria-pressed="false">Telescopic</button>
       <button class="filter" type="button" data-filter="crawler" aria-pressed="false">Crawler</button>
-      <button class="filter" type="button" data-filter="mobile" aria-pressed="false">Hydraulic mobile</button>
+      <button class="filter" type="button" data-filter="lattice" aria-pressed="false">Lattice boom</button>
+      <button class="filter" type="button" data-filter="access" aria-pressed="false">Access lifts</button>
+      <button class="filter" type="button" data-filter="yard" aria-pressed="false">Hydra &amp; forklifts</button>
+      <button class="filter" type="button" data-filter="transport" aria-pressed="false">Transport</button>
     </div>
     <div class="toolbar__end">
-      <span class="toolbar__count" aria-live="polite" data-count-out>12 results</span>
-      <label class="visually-hidden" for="sort">Sort machines</label>
-      <select class="sort" id="sort" data-sort>
-        <option value="default">Sort: default</option>
-        <option value="cap-desc">Capacity: high to low</option>
-        <option value="cap-asc">Capacity: low to high</option>
-        <option value="year-desc">Year: newest first</option>
-        <option value="year-asc">Year: oldest first</option>
-        <option value="make">Make: A &rarr; Z</option>
-      </select>
+      <span class="toolbar__count" aria-live="polite" data-count-out>83 machines</span>
     </div>
   </div>
 </div>
 
-<section class="machines" aria-label="Machines">
-  <div class="machine-grid" data-grid>
-
-    <article class="machine" data-machine data-cat="at" data-cap="750" data-year="2025" data-make="XCMG" data-order="1" data-hover-group data-reveal="card">
-      <div class="media media--16x10"><div class="media__inner" data-hover-img><div class="media__placeholder"><span>XCMG XCA750</span></div></div></div>
-      <div class="machine__body">
-        <span class="machine__type">All terrain crane</span>
-        <h3 class="h3">XCMG XCA750</h3>
-        <dl class="machine__specs">
-          <div class="machine__spec"><dt>Capacity</dt><dd class="is-key">750 Ton</dd></div>
-          <div class="machine__spec"><dt>Boom</dt><dd>90.5 m</dd></div>
-          <div class="machine__spec"><dt>Jib</dt><dd>56 m</dd></div>
-          <div class="machine__spec"><dt>Luffing jib</dt><dd>91 m</dd></div>
-          <div class="machine__spec"><dt>Counterweight</dt><dd>160 Ton</dd></div>
-          <div class="machine__spec"><dt>Year</dt><dd>2025</dd></div>
-        </dl>
-        <a class="btn btn--outline machine__cta" href="index.html#contact">Enquire now <span data-arrow aria-hidden="true">&rarr;</span></a>
+<section class="machines" aria-label="Equipment list">
+  <div class="fleet-groups">
+    <section class="fleet-group" data-group="telescopic" aria-labelledby="group-telescopic">
+      <header class="fleet-group__head">
+        <h2 class="h3" id="group-telescopic">Telescopic cranes</h2>
+        <p class="fleet-group__count">40 machines</p>
+      </header>
+      <p class="fleet-group__note">Truck-mounted and all-terrain cranes from 20 to 800 tons, road-mobile and quick to rig.</p>
+      <div class="fleet-table__scroll">
+        <table class="fleet-table">
+          <thead>
+            <tr><th scope="col">Make &amp; model</th><th scope="col">Capacity</th><th scope="col">Main boom</th><th scope="col">Fixed jib</th><th scope="col">Luffing jib</th><th scope="col">In fleet</th><th scope="col">Year</th></tr>
+          </thead>
+          <tbody>
+          <tr data-units="1"><th scope="row">Liebherr LTM 1750-9.1</th><td class="is-key">800 T</td><td>56 m</td><td>—</td><td>91 m</td><td>1</td><td>—</td></tr>
+          <tr data-units="1"><th scope="row">XCMG XCA750</th><td class="is-key">750 T</td><td>90.5 m</td><td>56 m</td><td>91 m</td><td>1</td><td>2025</td></tr>
+          <tr data-units="1"><th scope="row">Terex Demag AC 700</th><td class="is-key">700 T</td><td>60 m</td><td>96 m</td><td>—</td><td>1</td><td>—</td></tr>
+          <tr data-units="1"><th scope="row">Terex Demag AC 500-2</th><td class="is-key">500 T</td><td>56 m</td><td>62 m</td><td>90 m</td><td>1</td><td>—</td></tr>
+          <tr data-units="1"><th scope="row">Terex Demag AC 500-1</th><td class="is-key">500 T</td><td>—</td><td>—</td><td>—</td><td>1</td><td>—</td></tr>
+          <tr data-units="1"><th scope="row">Liebherr LTM 1500</th><td class="is-key">500 T</td><td>50 m</td><td>63 m</td><td>63 m</td><td>1</td><td>—</td></tr>
+          <tr data-units="2"><th scope="row">Liebherr LTM 1400</th><td class="is-key">400 T</td><td>50 m</td><td>—</td><td>56 m</td><td>2</td><td>—</td></tr>
+          <tr data-units="1"><th scope="row">Gottwald AMK 401-83</th><td class="is-key">400 T</td><td>49 m</td><td>—</td><td>70 m</td><td>1</td><td>—</td></tr>
+          <tr data-units="1"><th scope="row">Demag AC 400</th><td class="is-key">400 T</td><td>58 m</td><td>44 m</td><td>78 m</td><td>1</td><td>—</td></tr>
+          <tr data-units="1"><th scope="row">Demag AC 350-1</th><td class="is-key">350 T</td><td>56 m</td><td>49.5 m</td><td>71 m</td><td>1</td><td>—</td></tr>
+          <tr data-units="1"><th scope="row">Zoomlion ZAT3500V853</th><td class="is-key">350 T</td><td>90 m</td><td>37.5 m</td><td>—</td><td>1</td><td>2024</td></tr>
+          <tr data-units="2"><th scope="row">Demag HC 810 SL</th><td class="is-key">330 T</td><td>52 m</td><td>22 m</td><td>37 m</td><td>2</td><td>—</td></tr>
+          <tr data-units="1"><th scope="row">Grove GMK 6300 L</th><td class="is-key">300 T</td><td>80 m</td><td>37 m</td><td>—</td><td>1</td><td>—</td></tr>
+          <tr data-units="1"><th scope="row">Krupp KMK 7300</th><td class="is-key">300 T</td><td>63 m</td><td>38 m</td><td>56 m</td><td>1</td><td>—</td></tr>
+          <tr data-units="2"><th scope="row">Demag AC 615 SL</th><td class="is-key">250 T</td><td>50 m</td><td>33 m</td><td>51 m</td><td>2</td><td>—</td></tr>
+          <tr data-units="1"><th scope="row">Demag AC 200-1</th><td class="is-key">200 T</td><td>68 m</td><td>33 m</td><td>—</td><td>1</td><td>—</td></tr>
+          <tr data-units="1"><th scope="row">Zoomlion ZAT2000V853N</th><td class="is-key">200 T</td><td>88 m</td><td>17.5 m</td><td>—</td><td>1</td><td>2025</td></tr>
+          <tr data-units="1"><th scope="row">Zoomlion ZAT2000E763.1</th><td class="is-key">200 T</td><td>75 m</td><td>18 m</td><td>—</td><td>1</td><td>2024</td></tr>
+          <tr data-units="1"><th scope="row">Zoomlion ZAT2000E753.1</th><td class="is-key">200 T</td><td>75 m</td><td>18 m</td><td>—</td><td>1</td><td>2022</td></tr>
+          <tr data-units="3"><th scope="row">Demag AC 435</th><td class="is-key">165 T</td><td>50 m</td><td>17 m</td><td>14 m</td><td>3</td><td>—</td></tr>
+          <tr data-units="1"><th scope="row">Krupp GMT 140</th><td class="is-key">160 T</td><td>47 m</td><td>18 m</td><td>—</td><td>1</td><td>1987</td></tr>
+          <tr data-units="1"><th scope="row">Krupp KMK 5110</th><td class="is-key">110 T</td><td>42 m</td><td>16 m</td><td>—</td><td>1</td><td>—</td></tr>
+          <tr data-units="2"><th scope="row">Demag AC 265</th><td class="is-key">110 T</td><td>45 m</td><td>17 m</td><td>—</td><td>2</td><td>—</td></tr>
+          <tr data-units="1"><th scope="row">Liebherr LTM 1090-4.1</th><td class="is-key">100 T</td><td>52 m</td><td>19 m</td><td>—</td><td>1</td><td>—</td></tr>
+          <tr data-units="1"><th scope="row">Krupp KMK 4070</th><td class="is-key">80 T</td><td>38 m</td><td>16 m</td><td>—</td><td>1</td><td>—</td></tr>
+          <tr data-units="2"><th scope="row">Sany STC 800</th><td class="is-key">80 T</td><td>45 m</td><td>16 m</td><td>—</td><td>2</td><td>—</td></tr>
+          <tr data-units="1"><th scope="row">Demag AC 155</th><td class="is-key">50 T</td><td>40 m</td><td>16.1 m</td><td>—</td><td>1</td><td>—</td></tr>
+          <tr data-units="2"><th scope="row">Grove TMS 475</th><td class="is-key">50 T</td><td>33.5 m</td><td>9.7 m</td><td>—</td><td>2</td><td>—</td></tr>
+          <tr data-units="1"><th scope="row">Kato NK 250</th><td class="is-key">25 T</td><td>31 m</td><td>8 m</td><td>—</td><td>1</td><td>—</td></tr>
+          <tr data-units="2"><th scope="row">Tadano TL 201</th><td class="is-key">20 T</td><td>30.4 m</td><td>6.2 m</td><td>—</td><td>2</td><td>—</td></tr>
+          <tr data-units="1"><th scope="row">P&H T 200</th><td class="is-key">20 T</td><td>31 m</td><td>7.5 m</td><td>—</td><td>1</td><td>—</td></tr>
+          </tbody>
+        </table>
       </div>
-    </article>
+    </section>
 
-    <article class="machine" data-machine data-cat="crawler" data-cap="600" data-year="2024" data-make="Zoomlion" data-order="2" data-hover-group data-reveal="card">
-      <div class="media media--16x10"><div class="media__inner" data-hover-img><div class="media__placeholder"><span>Zoomlion ZCC7200A</span></div></div></div>
-      <div class="machine__body">
-        <span class="machine__type">Crawler crane</span>
-        <h3 class="h3">Zoomlion ZCC7200A</h3>
-        <dl class="machine__specs">
-          <div class="machine__spec"><dt>Capacity</dt><dd class="is-key">600 Ton</dd></div>
-          <div class="machine__spec"><dt>Boom</dt><dd>84 m</dd></div>
-          <div class="machine__spec"><dt>Jib</dt><dd>84 m</dd></div>
-          <div class="machine__spec"><dt>Luffing jib</dt><dd class="is-empty">&mdash;</dd></div>
-          <div class="machine__spec"><dt>Counterweight</dt><dd>430 Ton</dd></div>
-          <div class="machine__spec"><dt>Year</dt><dd>2024</dd></div>
-        </dl>
-        <a class="btn btn--outline machine__cta" href="index.html#contact">Enquire now <span data-arrow aria-hidden="true">&rarr;</span></a>
+    <section class="fleet-group" data-group="crawler" aria-labelledby="group-crawler">
+      <header class="fleet-group__head">
+        <h2 class="h3" id="group-crawler">Crawler cranes</h2>
+        <p class="fleet-group__count">9 machines</p>
+      </header>
+      <p class="fleet-group__note">Long-boom lattice crawlers for sustained heavy lifts and luffing jib work on site.</p>
+      <div class="fleet-table__scroll">
+        <table class="fleet-table">
+          <thead>
+            <tr><th scope="col">Make &amp; model</th><th scope="col">Capacity</th><th scope="col">Main boom</th><th scope="col">Fixed jib</th><th scope="col">Luffing jib</th><th scope="col">In fleet</th><th scope="col">Year</th></tr>
+          </thead>
+          <tbody>
+          <tr data-units="1"><th scope="row">Liebherr LR 1750</th><td class="is-key">750 T</td><td>—</td><td>—</td><td>—</td><td>1</td><td>—</td></tr>
+          <tr data-units="1"><th scope="row">Terex Demag CC 2800</th><td class="is-key">600 T</td><td>—</td><td>—</td><td>—</td><td>1</td><td>—</td></tr>
+          <tr data-units="1"><th scope="row">Zoomlion ZCC7200A</th><td class="is-key">600 T</td><td>84 m</td><td>84 m</td><td>—</td><td>1</td><td>2024</td></tr>
+          <tr data-units="1"><th scope="row">XCMG XGC600W</th><td class="is-key">600 T</td><td>93 m</td><td>—</td><td>84 m</td><td>1</td><td>2025</td></tr>
+          <tr data-units="1"><th scope="row">Liebherr LR 1400-2</th><td class="is-key">400 T</td><td>84 m</td><td>38.5 m</td><td>—</td><td>1</td><td>—</td></tr>
+          <tr data-units="1"><th scope="row">Liebherr LR 1350</th><td class="is-key">350 T</td><td>96 m</td><td>36 m</td><td>—</td><td>1</td><td>—</td></tr>
+          <tr data-units="1"><th scope="row">Zoomlion ZCC2600-2</th><td class="is-key">260 T</td><td>83 m</td><td>30 m</td><td>60 m</td><td>1</td><td>2023</td></tr>
+          <tr data-units="1"><th scope="row">Sany SCS1500A</th><td class="is-key">150 T</td><td>76 m</td><td>31 m</td><td>52 m</td><td>1</td><td>2024</td></tr>
+          <tr data-units="1"><th scope="row">Sany SCI1500A</th><td class="is-key">150 T</td><td>76 m</td><td>31 m</td><td>—</td><td>1</td><td>2022</td></tr>
+          </tbody>
+        </table>
       </div>
-    </article>
+    </section>
 
-    <article class="machine" data-machine data-cat="crawler" data-cap="600" data-year="2025" data-make="XCMG" data-order="3" data-hover-group data-reveal="card">
-      <div class="media media--16x10"><div class="media__inner" data-hover-img><div class="media__placeholder"><span>XCMG XGC600W</span></div></div></div>
-      <div class="machine__body">
-        <span class="machine__type">Crawler crane</span>
-        <h3 class="h3">XCMG XGC600W</h3>
-        <dl class="machine__specs">
-          <div class="machine__spec"><dt>Capacity</dt><dd class="is-key">600 Ton</dd></div>
-          <div class="machine__spec"><dt>Boom</dt><dd>93 m</dd></div>
-          <div class="machine__spec"><dt>Jib</dt><dd class="is-empty">&mdash;</dd></div>
-          <div class="machine__spec"><dt>Luffing jib</dt><dd>84 m</dd></div>
-          <div class="machine__spec"><dt>Counterweight</dt><dd>420 Ton</dd></div>
-          <div class="machine__spec"><dt>Year</dt><dd>2025</dd></div>
-        </dl>
-        <a class="btn btn--outline machine__cta" href="index.html#contact">Enquire now <span data-arrow aria-hidden="true">&rarr;</span></a>
+    <section class="fleet-group" data-group="lattice" aria-labelledby="group-lattice">
+      <header class="fleet-group__head">
+        <h2 class="h3" id="group-lattice">Lattice boom cranes</h2>
+        <p class="fleet-group__count">4 machines</p>
+      </header>
+      <p class="fleet-group__note">Truck-mounted lattice cranes; the two capacities are the boom and jib ratings.</p>
+      <div class="fleet-table__scroll">
+        <table class="fleet-table">
+          <thead>
+            <tr><th scope="col">Make &amp; model</th><th scope="col">Capacity</th><th scope="col">Main boom</th><th scope="col">Fixed jib</th><th scope="col">Luffing jib</th><th scope="col">In fleet</th><th scope="col">Year</th></tr>
+          </thead>
+          <tbody>
+          <tr data-units="1"><th scope="row">Demag TC 2000</th><td class="is-key">400 / 450 T</td><td>90 m</td><td>—</td><td>72 m</td><td>1</td><td>—</td></tr>
+          <tr data-units="1"><th scope="row">Pinguely GC 15</th><td class="is-key">135 / 150 T</td><td>56.5 m</td><td>18 m</td><td>—</td><td>1</td><td>—</td></tr>
+          <tr data-units="1"><th scope="row">P&H TC 790</th><td class="is-key">90 / 100 T</td><td>58 m</td><td>18 m</td><td>—</td><td>1</td><td>—</td></tr>
+          <tr data-units="1"><th scope="row">Lorain MC 545</th><td class="is-key">45 / 50 T</td><td>30 m</td><td>10 m</td><td>—</td><td>1</td><td>—</td></tr>
+          </tbody>
+        </table>
       </div>
-    </article>
+    </section>
 
-    <article class="machine" data-machine data-cat="at" data-cap="350" data-year="2024" data-make="Zoomlion" data-order="4" data-hover-group data-reveal="card">
-      <div class="media media--16x10"><div class="media__inner" data-hover-img><div class="media__placeholder"><span>Zoomlion ZAT3500V853</span></div></div></div>
-      <div class="machine__body">
-        <span class="machine__type">All terrain crane</span>
-        <h3 class="h3">Zoomlion ZAT3500V853</h3>
-        <dl class="machine__specs">
-          <div class="machine__spec"><dt>Capacity</dt><dd class="is-key">350 Ton</dd></div>
-          <div class="machine__spec"><dt>Boom</dt><dd>90 m</dd></div>
-          <div class="machine__spec"><dt>Jib</dt><dd>37.5 m</dd></div>
-          <div class="machine__spec"><dt>Luffing jib</dt><dd class="is-empty">&mdash;</dd></div>
-          <div class="machine__spec"><dt>Counterweight</dt><dd>100 Ton</dd></div>
-          <div class="machine__spec"><dt>Year</dt><dd>2024</dd></div>
-        </dl>
-        <a class="btn btn--outline machine__cta" href="index.html#contact">Enquire now <span data-arrow aria-hidden="true">&rarr;</span></a>
+    <section class="fleet-group" data-group="access" aria-labelledby="group-access">
+      <header class="fleet-group__head">
+        <h2 class="h3" id="group-access">Boom &amp; scissor lifts, telehandlers</h2>
+        <p class="fleet-group__count">17 machines</p>
+      </header>
+      <p class="fleet-group__note">Access platforms rated by working height, for maintenance and erection at height.</p>
+      <div class="fleet-table__scroll">
+        <table class="fleet-table fleet-table--slim">
+          <thead>
+            <tr><th scope="col">Make &amp; model</th><th scope="col">Reach / capacity</th><th scope="col">In fleet</th></tr>
+          </thead>
+          <tbody>
+          <tr data-units="2"><th scope="row">JLG 1350 SJP</th><td class="is-key">41 m working height</td><td>2</td></tr>
+          <tr data-units="4"><th scope="row">JLG 120 SXJ / HX</th><td class="is-key">38 m working height</td><td>4</td></tr>
+          <tr data-units="4"><th scope="row">JLG 80 AJ / HX</th><td class="is-key">26 m working height</td><td>4</td></tr>
+          <tr data-units="4"><th scope="row">JLG 600 S</th><td class="is-key">18 m working height</td><td>4</td></tr>
+          <tr data-units="2"><th scope="row">JLG 500 RTS</th><td class="is-key">18 m working height</td><td>2</td></tr>
+          <tr data-units="1"><th scope="row">Manitou MT 1740 telehandler</th><td class="is-key">4 T at 17 m</td><td>1</td></tr>
+          </tbody>
+        </table>
       </div>
-    </article>
+    </section>
 
-    <article class="machine" data-machine data-cat="crawler" data-cap="260" data-year="2023" data-make="Zoomlion" data-order="5" data-hover-group data-reveal="card">
-      <div class="media media--16x10"><div class="media__inner" data-hover-img><div class="media__placeholder"><span>Zoomlion ZCC2600-2</span></div></div></div>
-      <div class="machine__body">
-        <span class="machine__type">Crawler crane</span>
-        <h3 class="h3">Zoomlion ZCC2600-2</h3>
-        <dl class="machine__specs">
-          <div class="machine__spec"><dt>Capacity</dt><dd class="is-key">260 Ton</dd></div>
-          <div class="machine__spec"><dt>Boom</dt><dd>83 m</dd></div>
-          <div class="machine__spec"><dt>Jib</dt><dd>30 m</dd></div>
-          <div class="machine__spec"><dt>Luffing jib</dt><dd>60 m</dd></div>
-          <div class="machine__spec"><dt>Counterweight</dt><dd>77.5 Ton</dd></div>
-          <div class="machine__spec"><dt>Year</dt><dd>2023</dd></div>
-        </dl>
-        <a class="btn btn--outline machine__cta" href="index.html#contact">Enquire now <span data-arrow aria-hidden="true">&rarr;</span></a>
+    <section class="fleet-group" data-group="yard" aria-labelledby="group-yard">
+      <header class="fleet-group__head">
+        <h2 class="h3" id="group-yard">Hydra cranes &amp; forklifts</h2>
+        <p class="fleet-group__count">13 machines</p>
+      </header>
+      <p class="fleet-group__note">Pick-and-carry cranes and forklifts for yard handling and short moves.</p>
+      <div class="fleet-table__scroll">
+        <table class="fleet-table fleet-table--slim">
+          <thead>
+            <tr><th scope="col">Make &amp; model</th><th scope="col">Capacity</th><th scope="col">In fleet</th></tr>
+          </thead>
+          <tbody>
+          <tr data-units="4"><th scope="row">Escort Firana</th><td class="is-key">15 T</td><td>4</td></tr>
+          <tr data-units="4"><th scope="row">ACE Hydra</th><td class="is-key">12 T</td><td>4</td></tr>
+          <tr data-units="4"><th scope="row">ACE Hydra</th><td class="is-key">11 T</td><td>4</td></tr>
+          <tr data-units="1"><th scope="row">Forklift</th><td class="is-key">3 T</td><td>1</td></tr>
+          </tbody>
+        </table>
       </div>
-    </article>
+    </section>
 
-    <article class="machine" data-machine data-cat="at" data-cap="250" data-year="1995" data-make="Demag" data-order="6" data-hover-group data-reveal="card">
-      <div class="media media--16x10"><div class="media__inner" data-hover-img><div class="media__placeholder"><span>Demag AC 615J</span></div></div></div>
-      <div class="machine__body">
-        <span class="machine__type">All terrain crane</span>
-        <h3 class="h3">Demag AC 615J</h3>
-        <dl class="machine__specs">
-          <div class="machine__spec"><dt>Capacity</dt><dd class="is-key">250 Ton</dd></div>
-          <div class="machine__spec"><dt>Boom</dt><dd>50 m</dd></div>
-          <div class="machine__spec"><dt>Jib</dt><dd>18 m</dd></div>
-          <div class="machine__spec"><dt>Luffing jib</dt><dd class="is-empty">&mdash;</dd></div>
-          <div class="machine__spec"><dt>Counterweight</dt><dd>70 Ton</dd></div>
-          <div class="machine__spec"><dt>Year</dt><dd>1995</dd></div>
-        </dl>
-        <a class="btn btn--outline machine__cta" href="index.html#contact">Enquire now <span data-arrow aria-hidden="true">&rarr;</span></a>
-      </div>
-    </article>
-
-    <article class="machine" data-machine data-cat="at" data-cap="200" data-year="2022" data-make="Zoomlion" data-order="7" data-hover-group data-reveal="card">
-      <div class="media media--16x10"><div class="media__inner" data-hover-img><div class="media__placeholder"><span>Zoomlion ZAT2000E753.1</span></div></div></div>
-      <div class="machine__body">
-        <span class="machine__type">All terrain crane</span>
-        <h3 class="h3">Zoomlion ZAT2000E753.1</h3>
-        <dl class="machine__specs">
-          <div class="machine__spec"><dt>Capacity</dt><dd class="is-key">200 Ton</dd></div>
-          <div class="machine__spec"><dt>Boom</dt><dd>75 m</dd></div>
-          <div class="machine__spec"><dt>Jib</dt><dd>18 m</dd></div>
-          <div class="machine__spec"><dt>Luffing jib</dt><dd class="is-empty">&mdash;</dd></div>
-          <div class="machine__spec"><dt>Counterweight</dt><dd>68 Ton</dd></div>
-          <div class="machine__spec"><dt>Year</dt><dd>2022</dd></div>
-        </dl>
-        <a class="btn btn--outline machine__cta" href="index.html#contact">Enquire now <span data-arrow aria-hidden="true">&rarr;</span></a>
-      </div>
-    </article>
-
-    <article class="machine" data-machine data-cat="mobile" data-cap="200" data-year="2024" data-make="Zoomlion" data-order="8" data-hover-group data-reveal="card">
-      <div class="media media--16x10"><div class="media__inner" data-hover-img><div class="media__placeholder"><span>Zoomlion ZAT2000E763.1</span></div></div></div>
-      <div class="machine__body">
-        <span class="machine__type">Hydraulic mobile crane</span>
-        <h3 class="h3">Zoomlion ZAT2000E763.1</h3>
-        <dl class="machine__specs">
-          <div class="machine__spec"><dt>Capacity</dt><dd class="is-key">200 Ton</dd></div>
-          <div class="machine__spec"><dt>Boom</dt><dd>75 m</dd></div>
-          <div class="machine__spec"><dt>Jib</dt><dd>18 m</dd></div>
-          <div class="machine__spec"><dt>Luffing jib</dt><dd class="is-empty">&mdash;</dd></div>
-          <div class="machine__spec"><dt>Counterweight</dt><dd>68 Ton</dd></div>
-          <div class="machine__spec"><dt>Year</dt><dd>2024</dd></div>
-        </dl>
-        <a class="btn btn--outline machine__cta" href="index.html#contact">Enquire now <span data-arrow aria-hidden="true">&rarr;</span></a>
-      </div>
-    </article>
-
-    <article class="machine" data-machine data-cat="mobile" data-cap="200" data-year="2025" data-make="Zoomlion" data-order="9" data-hover-group data-reveal="card">
-      <div class="media media--16x10"><div class="media__inner" data-hover-img><div class="media__placeholder"><span>Zoomlion ZAT2000V853N</span></div></div></div>
-      <div class="machine__body">
-        <span class="machine__type">Hydraulic mobile crane</span>
-        <h3 class="h3">Zoomlion ZAT2000V853N</h3>
-        <dl class="machine__specs">
-          <div class="machine__spec"><dt>Capacity</dt><dd class="is-key">200 Ton</dd></div>
-          <div class="machine__spec"><dt>Boom</dt><dd>88 m</dd></div>
-          <div class="machine__spec"><dt>Jib</dt><dd>17.5 m</dd></div>
-          <div class="machine__spec"><dt>Luffing jib</dt><dd class="is-empty">&mdash;</dd></div>
-          <div class="machine__spec"><dt>Counterweight</dt><dd>60 Ton</dd></div>
-          <div class="machine__spec"><dt>Year</dt><dd>2025</dd></div>
-        </dl>
-        <a class="btn btn--outline machine__cta" href="index.html#contact">Enquire now <span data-arrow aria-hidden="true">&rarr;</span></a>
-      </div>
-    </article>
-
-    <article class="machine" data-machine data-cat="at" data-cap="160" data-year="1987" data-make="Krupp" data-order="10" data-hover-group data-reveal="card">
-      <div class="media media--16x10"><div class="media__inner" data-hover-img><div class="media__placeholder"><span>Krupp GMT 140</span></div></div></div>
-      <div class="machine__body">
-        <span class="machine__type">All terrain crane</span>
-        <h3 class="h3">Krupp GMT 140</h3>
-        <dl class="machine__specs">
-          <div class="machine__spec"><dt>Capacity</dt><dd class="is-key">160 Ton</dd></div>
-          <div class="machine__spec"><dt>Boom</dt><dd>47 m</dd></div>
-          <div class="machine__spec"><dt>Jib</dt><dd>18 m</dd></div>
-          <div class="machine__spec"><dt>Luffing jib</dt><dd class="is-empty">&mdash;</dd></div>
-          <div class="machine__spec"><dt>Counterweight</dt><dd class="is-empty">&mdash;</dd></div>
-          <div class="machine__spec"><dt>Year</dt><dd>1987</dd></div>
-        </dl>
-        <a class="btn btn--outline machine__cta" href="index.html#contact">Enquire now <span data-arrow aria-hidden="true">&rarr;</span></a>
-      </div>
-    </article>
-
-    <article class="machine" data-machine data-cat="crawler" data-cap="150" data-year="2022" data-make="Sany" data-order="11" data-hover-group data-reveal="card">
-      <div class="media media--16x10"><div class="media__inner" data-hover-img><div class="media__placeholder"><span>Sany SCI1500A</span></div></div></div>
-      <div class="machine__body">
-        <span class="machine__type">Crawler crane</span>
-        <h3 class="h3">Sany SCI1500A</h3>
-        <dl class="machine__specs">
-          <div class="machine__spec"><dt>Capacity</dt><dd class="is-key">150 Ton</dd></div>
-          <div class="machine__spec"><dt>Boom</dt><dd>76 m</dd></div>
-          <div class="machine__spec"><dt>Jib</dt><dd>31 m</dd></div>
-          <div class="machine__spec"><dt>Luffing jib</dt><dd class="is-empty">&mdash;</dd></div>
-          <div class="machine__spec"><dt>Counterweight</dt><dd>60 Ton</dd></div>
-          <div class="machine__spec"><dt>Year</dt><dd>2022</dd></div>
-        </dl>
-        <a class="btn btn--outline machine__cta" href="index.html#contact">Enquire now <span data-arrow aria-hidden="true">&rarr;</span></a>
-      </div>
-    </article>
-
-    <article class="machine" data-machine data-cat="crawler" data-cap="150" data-year="2024" data-make="Sany" data-order="12" data-hover-group data-reveal="card">
-      <div class="media media--16x10"><div class="media__inner" data-hover-img><div class="media__placeholder"><span>Sany SCS1500A</span></div></div></div>
-      <div class="machine__body">
-        <span class="machine__type">Crawler crane</span>
-        <h3 class="h3">Sany SCS1500A</h3>
-        <dl class="machine__specs">
-          <div class="machine__spec"><dt>Capacity</dt><dd class="is-key">150 Ton</dd></div>
-          <div class="machine__spec"><dt>Boom</dt><dd>76 m</dd></div>
-          <div class="machine__spec"><dt>Jib</dt><dd>31 m</dd></div>
-          <div class="machine__spec"><dt>Luffing jib</dt><dd>52 m</dd></div>
-          <div class="machine__spec"><dt>Counterweight</dt><dd>55 Ton</dd></div>
-          <div class="machine__spec"><dt>Year</dt><dd>2024</dd></div>
-        </dl>
-        <a class="btn btn--outline machine__cta" href="index.html#contact">Enquire now <span data-arrow aria-hidden="true">&rarr;</span></a>
-      </div>
-    </article>
-
+    <section class="fleet-group" data-group="transport" aria-labelledby="group-transport">
+      <header class="fleet-group__head">
+        <h2 class="h3" id="group-transport">Trailers &amp; hydraulic multi-axles</h2>
+      </header>
+      <p class="fleet-group__note">Low bed, semi low bed and high bed trailers, plus Indian and imported multi-axle trailers for girders, cranes and over-dimensional cargo.</p>
+    </section>
   </div>
-  <p class="machines__empty" data-empty>No machines in this class &mdash; ask us about availability.</p>
+  <p class="machines__empty" data-empty>Nothing in this class &mdash; ask us about availability.</p>
 </section>
 
 <section class="section section--tile" aria-labelledby="fleet-cta-title">
@@ -306,8 +240,8 @@
     <div>
       <p class="lede">Send us the load, the radius and the site. We return a configuration, a lift plan and a quotation.</p>
       <div class="contact__actions">
-        <a class="btn btn--solid btn--lg" href="index.html#contact" data-hover-group>Request a quote <span class="btn__icon" aria-hidden="true"><span data-arrow>&rarr;</span></span></a>
-        <a class="btn btn--outline btn--lg" href="tel:+910000000000">Call our lifting team</a>
+        <a class="btn btn--solid btn--lg" href="mailto:info@sunder.in" data-hover-group>Email an enquiry <span class="btn__icon" aria-hidden="true"><span data-arrow>&rarr;</span></span></a>
+        <a class="btn btn--outline btn--lg" href="tel:+912228458114">+91 22 2845 8114</a>
       </div>
     </div>
   </div>
@@ -321,6 +255,11 @@
       <div>
         <a class="brand site-footer__brand" href="index.html"><img src="brand/sunder-mark.png" alt=""><span>Sunder Cranes</span></a>
         <p class="site-footer__tag">Heavy lifting &amp; transportation across India.</p>
+        <address class="site-footer__address">
+          Near Dahisar Check Naka, Western Express Highway,<br>
+          Kashimira, Thane 401104, Maharashtra
+        </address>
+        <p class="site-footer__contact"><a href="tel:+912228458114">+91 22 2845 8114</a> &middot; <a href="mailto:info@sunder.in">info@sunder.in</a></p>
       </div>
       <nav class="site-footer__links" aria-label="Footer">
         <div><h2>Company</h2><ul><li><a href="index.html#about">About</a></li><li><a href="index.html#safety">Safety</a></li><li><a href="index.html#contact">Contact</a></li></ul></div>
