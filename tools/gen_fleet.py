@@ -34,7 +34,7 @@ def card(model, kind, specs, cat, n=1):
         <div class="machine__body">
           <h3 class="h3">{model}</h3>
           <div class="machine__specs">{pairs}</div>
-          <a class="btn btn--solid machine__cta" href="mailto:info@sunder.in?subject={model.replace(' ', '%20')}" data-hover-group>Enquire now <span class="btn__icon" aria-hidden="true"><span data-arrow>&rarr;</span></span></a>
+          <a class="btn btn--solid machine__cta" href="mailto:info@sunder.in?subject={model.replace(' ', '%20')}">Enquire now</a>
         </div>
       </article>"""
 

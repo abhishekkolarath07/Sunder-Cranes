@@ -124,7 +124,7 @@ select { appearance: none; -webkit-appearance: none; }
 .lede { max-width: 50ch; font-size: clamp(16px, 1.2vw, 18px); line-height: 1.6; color: var(--text-muted); }
 .on-dark .lede { color: var(--text-on-dark-muted); }
 .body-sm { font-size: 15px; line-height: 1.55; color: var(--text-muted); }
-.label { font-size: 13px; color: var(--text-muted); }
+.label { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--text-muted); }
 .on-dark .label { color: var(--text-on-dark-muted); }
 
 /* Pill buttons; the solid one carries a round arrow badge */
@@ -483,12 +483,12 @@ select { appearance: none; -webkit-appearance: none; }
 @media (max-width: 899px) { .fleet-cards { grid-template-columns: 1fr; max-width: 560px; margin-left: 0; } }
 .fleet-card { display: flex; flex-direction: column; padding: 8px; border-radius: var(--radius); background: var(--ink-850); transition: background-color .3s ease; }
 .fleet-card:hover { background: var(--ink-800); }
-.fleet-card__body { display: flex; flex-direction: column; gap: 10px; padding: 24px 20px 24px; }
+.fleet-card__body { display: flex; flex-direction: column; gap: 8px; padding: 22px 20px 24px; }
 .fleet-card__type { font-size: 13px; color: var(--text-on-dark-muted); }
 .fleet-card .h3 { color: var(--text-on-dark); }
-.fleet-card__specs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 32px; margin-top: 14px; padding-top: 24px; border-top: 1px solid var(--line-dark); }
-.spec { display: flex; flex-direction: column; gap: 6px; }
-.spec__value { font-size: 17px; font-weight: 500; color: var(--text-on-dark); font-variant-numeric: tabular-nums; }
+.fleet-card__specs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 24px; margin-top: 12px; padding-top: 20px; border-top: 1px solid var(--line-dark); }
+.spec { display: flex; flex-direction: column; gap: 4px; }
+.spec__value { font-size: 16px; font-weight: 500; color: var(--text-on-dark); font-variant-numeric: tabular-nums; }
 .fleet-more { display: flex; margin-top: 32px; }
 
 /* Safety: numbered stages beside a sticky photo panel */
@@ -655,7 +655,7 @@ select { appearance: none; -webkit-appearance: none; }
 .fleet-group__note { max-width: 70ch; margin-top: 14px; font-size: 15px; color: var(--text-muted); }
 
 /* Machine cards: photo, type badge, model, spec pairs, enquiry button */
-.machine-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 28px; }
+.machine-grid { display: grid; grid-template-columns: 1fr; gap: 24px; margin-top: 28px; }
 @media (min-width: 700px) { .machine-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (min-width: 1100px) { .machine-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 .machine {
@@ -685,12 +685,13 @@ select { appearance: none; -webkit-appearance: none; }
   letter-spacing: .04em;
   text-transform: uppercase;
 }
-.machine__body { display: flex; flex: 1; flex-direction: column; padding: 24px; }
-.machine__body .h3 { margin-bottom: 24px; }
-.machine__specs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 32px; margin-bottom: 28px; }
-.machine__specs .spec { display: flex; flex-direction: column; gap: 6px; }
-.machine__specs .spec__value { font-size: 17px; font-weight: 500; color: var(--text); font-variant-numeric: tabular-nums; }
-.machine__cta { margin-top: auto; justify-content: space-between; padding-right: 6px; }
+.machine__body { display: flex; flex: 1; flex-direction: column; padding: 22px 24px 24px; }
+.machine__body .h3 { margin-bottom: 20px; }
+.machine__specs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 24px; margin-bottom: 24px; }
+.machine__specs .spec { display: flex; flex-direction: column; gap: 4px; }
+.machine__specs .spec__value { font-size: 16px; font-weight: 500; color: var(--text); font-variant-numeric: tabular-nums; }
+.machine__specs .label { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
+.machine__cta { width: 100%; margin-top: auto; padding: 12px 24px; }
 
 /* Trailers: types only — the client sheet lists no models or capacities */
 .transport-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 28px; }
